@@ -1,0 +1,8 @@
+
+
+
+ERROR ReferenceError: requiere is not defined
+    Agregar o modificar un archivo package.json con el contenido {"type": "module"} para que se ejecute los .js con ECMAScript module.
+
+    Cambiar el nombre del archivo por .mjs para ejecutar por ECMAScript module o .cjs para ejecutar con Commonjs
+

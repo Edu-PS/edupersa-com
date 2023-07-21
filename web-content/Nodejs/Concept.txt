@@ -23,5 +23,7 @@ COMO ENTRAR AL EDITOR DE NODEJS
 COMO SALIR DEL EDITOR NODE
     Presionando las teclas "Ctrl + C" dos veces, "Ctrl + D" o escribiendo ".exit".
 
+COMO EJECUTAR UN ARCHIVO
+    Se debe ir a la direccion donde se encuentra el archivo y ejecutar el comando "node nombre_archivo.js" y presionar ENTER.
 
 

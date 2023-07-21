@@ -1,0 +1,29 @@
+NOTAS
+    Es un lenguaje que no tiene definicion de tipo de variables, 
+    puede ser un numero y despues se puede asignar un texto a la misma variable.
+
+    Tiene dos variables, primitivas y de referencia (Investigar mejor)
+
+    Es un lenguaje orientado a objetos. Todo es un objeto.
+
+
+VARIABLES PRIMITIVAS
+    Son variables que se almacenan en la memoria STACK de la maquina, esta memoria es de facil y rapido acceso.
+
+    EJ - Bool, Int, String, Float, etc...
+
+    Estas cuando se asignan su valor a una nueva variable, se copia su valor en un nuevo espacio de memoria.
+
+VARIABLES REFERENCA
+    Son las variables que cuando se copian se hace referencia a su valor con un puntero.
+
+    Cuando se hace una igualdad de variables, se hace referencia al puntero de donde se almacenan sus valores
+    y no se hace una copia de los valores dentro de la nueva variable.
+
+    EJ - Array, Objetcs, etc...
+
+    Para copiar un array por ejemplo se usa 
+        nuevo_array = array.slice()
+    
+    Hay unas librerias que te ayudan a realizar estas copias. https://lodash.com/docs/#cloneDeep
+

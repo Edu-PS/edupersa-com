@@ -1,0 +1,17 @@
+
+
+Funcion
+    Son lineas de codigos que se ejecutan para realizar una tarea en concreto.
+    
+    Cuando se llama a la funcion se pasan unos valores llamados ARGUMENTOS, y dentro de la funcion se utilizan estos valores llamados PARAMETROS. 
+
+
+Recursion
+    Es una funcion que se llama a si misma pero con el ARGUMENTO de entrada modificado para que en algun momento se cumpla la condicion base de fin de ciclo.
+    
+    Si se cumple la condicion base entonces retorna el valor base, de lo contrario ejecuta algo y llama a la misma funcion con un argumento modificado.
+    
+
+Iteracion
+    Es la repeticion de un conjunto de codigo hasta que se cumpla o deje de cumplirse una condicion que detiene la ejecucion.
+

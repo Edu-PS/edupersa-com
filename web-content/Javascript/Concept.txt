@@ -1,0 +1,21 @@
+Funciones
+    Son piezas de codigos que realizan una funcion.
+
+    Se pueden definir de varias maneras.
+        funcion anonima
+            function (par1, par2,...parN) {contenido de la funcion}
+        
+        Funcion con nombre
+            funtion nombre_funcion (par1, par2,...parN) {contenido de la funcion}
+
+        Funcion flecha
+            (par1, par2,...parN) => {contenido de la funcion}
+    
+    Una funcion se puede asignar a una variable
+
+        const nombre_variable = (par1, par2,...parN) => {contenido de la funcion}
+
+STACK
+
+HEAP
+
