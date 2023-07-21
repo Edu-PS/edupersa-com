@@ -1,0 +1,20 @@
+
+REACT
+    Es una libreria de Javascript que ayuda a crear interfaces de usuario por medio de componentes.
+
+PORQUE USARLO
+    Ayuda a que las paginas web se vean super rapidas, parece que se obtienen respuestas instantaneas,
+    sin necesidad de volver a cargar y son mas amigables al usuario.
+
+    Mejor mantenimiento de las paginas web, se reducen los errores, mantiene modular el funcionamiento, etc.
+
+REACT vs Vanilla JAVASCRIPT
+    Se puede realizar todo lo que hace REACT con JAVASCRIPT puro y duro, 
+    pero se vuelven las web mas complicadas y dificiles de mantener.
+
+COMO FUNCIONA REACT
+    Es una libreria que detras de escena utiliza JAVASCRIPT para manipular el contenido web, 
+    esto significa que manipula tanto el contenido como lo visual que el cliente ve en su computador o telefono.
+
+QUE LENGUAJE USA
+    Se usa JAVASCRIPT como fondo, pero tiene un lenguaje propio que se llama JX.

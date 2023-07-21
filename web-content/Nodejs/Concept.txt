@@ -1,0 +1,27 @@
+NODEJS
+    Es un entorno de ejecucion de JAVASCRIPT. Es un Javascript RUNTIME. 
+    
+    Permite ejecutar el lenguaje Javascript en cualquier maquina o en otro entorno fuera del browser, como por ejemplo, un servidor.
+
+    Usa el V8 que es el motor que ejecuta Javascript en el navegador de Google. 
+    
+    Este V8 toma el codigo Javascript y lo convierte a codigo maquina. V8 esta escrito en C++.
+
+    Entonces, NODEJS toma Javascript y le agrega funciones de trabajar con archivos, documentos, ect... 
+    para poder manipularlos desde el navegador ya que con Javascript-Vanilla no se pueden manipular.
+
+    Javascript-Vanilla se utiliza para manipular el DOM y los elementos de una web que se ven en el navegador.
+
+
+
+COMO SABER LA VERSION 
+    Ejecutando el "node -v" comando en el cmd de windows. Con esto te dira la version que tienes actualmente instalado en el sistema.
+
+COMO ENTRAR AL EDITOR DE NODEJS
+    Ejecutando el comando "node" en el cmd de windows.
+
+COMO SALIR DEL EDITOR NODE
+    Presionando las teclas "Ctrl + C" dos veces, "Ctrl + D" o escribiendo ".exit".
+
+
+
