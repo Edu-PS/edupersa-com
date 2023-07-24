@@ -1,0 +1,7 @@
+
+// COMANDOS
+
+    - git pull
+        Sirve para igualar el repositorio local con el contenido del repositorio en remoto.
+
+
