@@ -4,4 +4,14 @@
     - git pull
         Sirve para igualar el repositorio local con el contenido del repositorio en remoto.
 
+// ADD ORIGIN
+    - git remote add origin url_repository
 
+// SET NEW ORIGIN
+    - git remote set-url origin url_repository
+
+// REMOVER REPOSITORIO REMOTO
+    - git remote rm nombre_repositorio
+
+// DEVOLVER CAMBIO DEL STAGE
+    - git restore nombre_archivo

@@ -19,3 +19,10 @@ STACK
 
 HEAP
 
+// TERNARY (?)
+    - El operador ternario es el utilizado para imprimir una cosa o la otra si la condicion es true.
+        boolean ? returnThisIfIsTrue : returnThisIfIsFalse;
+
+// LOGICO AND (&&)
+    - Como condicionante se utiliza para devolver el valor de la derecha si la variable es true.
+        boolean && returnThisIfIsTrue;

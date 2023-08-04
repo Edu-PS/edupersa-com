@@ -1,0 +1,12 @@
+// CLI 
+    - command-line interfaces
+    
+    - Siempre tienen la misma estructura - https://docs.nestjs.com/cli/overview#cli-command-syntax
+        nest commandOrAlias requiredArg [optionalArg] [options]
+        EJ - nest new my-nest-project --dry-run
+
+// VERSION DE NEST
+    - nest -v
+
+// INSTALAR
+    

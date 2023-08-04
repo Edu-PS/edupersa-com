@@ -1,0 +1,15 @@
+// RENDERIZADO 
+    - El renderizado se realiza por primera vez cuando se crea el componente,
+        posteriormente se renderiza cuando cambia algun valor de una variable estado.
+        por lo general con el uso de useState.
+    
+
+// RENDERIZADO NULL, FALSE or UNDEFINED.
+    React considera false como un «agujero» en el árbol JSX, al igual que null o undefined, y no renderiza nada en su lugar.
+
+En React, se controla la lógica de ramificación con JavaScript.
+Puedes devolver una expresión JSX condicionalmente con una sentencia if.
+Puedes guardar condicionalmente algún JSX en una variable y luego incluirlo dentro de otro JSX usando las llaves.
+En JSX, {cond ? <A /> : <B />} significa «si cond, renderiza <A />, si no <B />».
+En JSX, {cond && <A />} significa «si cond, renderiza <A />, si no, nada».
+Los atajos son comunes, pero no tienes que usarlos si prefieres el simple if.

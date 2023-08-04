@@ -18,3 +18,234 @@ COMO FUNCIONA REACT
 
 QUE LENGUAJE USA
     Se usa JAVASCRIPT como fondo, pero tiene un lenguaje propio que se llama JX.
+
+
+
+INSTALACION
+
+
+
+CREAR PROYECTO
+    - 
+
+
+NOMENCLATURAS
+    - Los nombres de componentes deben comenzar por mayusculas y se usa camelcase.
+
+    - las etiquetas de html deben estar siempre en minusculas
+
+    - 
+
+
+EXPORTANDO 
+    - Para exportar un componente, variable, funcion, etc... se tiene que usar la palabra clave "export" o "export default".
+
+    - Con "export default" se permite que cuando la importes le pongas cualquier nombre. Solo puede haber uno.
+
+    - Con "export" se tiene que usar exactamente el nombre de lo exportado.
+
+    - Tenga en cuenta que no es posible usar var, let o const con export default.
+
+        function sayHi(user) {
+        alert(`Hello, ${user}!`);
+        }
+
+        function sayBye(user) {
+        alert(`Bye, ${user}!`);
+        }
+
+        export {sayHi, sayBye}; // a list of exported variables
+        export {sayHi as hi, sayBye as bye};
+
+
+        // export an array
+        export let months = ['Jan', 'Feb', 'Mar','Apr', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+
+        // export a constant
+        export const MODULES_BECAME_STANDARD_YEAR = 2015;
+
+        // export a class
+        export class User {
+        constructor(name) {
+            this.name = name;
+        }
+        }
+
+
+IMPORT
+    - Se puede importar todos los export con una sola expresion.
+        import * as say from './say.js'; 
+
+    - Se puede importar unos modulos en especificos
+        import {sayHi, sayBye} from './say.js';
+    
+
+
+USEMEMO
+    - Se utiliza para almacenar un resultado de un renderizado anterior y 
+        comparar las dependencias de las que se debe comparar parar actualizar el componente y no realizarlo si no es necesario.
+
+
+MAP
+    - https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Array/map
+    - Se utiliza para ejecutar sobre cada elemento de un objeto iterable una funcion especifica.
+    - Retorna la funcion por cada elemento, creando un nuevo array.
+        EJ - array.map((elemento) => {Codigo a ejecutar})
+
+FOREACH
+    - https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach
+    - Ejecuta la funcion por cada elemento del array.
+    - No retorna ningun valor, solo recorre el array y ejecuta la funcion.
+
+// USECALBACK
+    - Se utiliza para almacenar en cache una funcion,
+        esta funcion se actualiza o cambia a una nueva funcion almacenada en cache cuando las dependencias cambian.
+    
+    - Generalmente las dependencias son variables que se utilizan dentro de la funcion definida.
+    
+    - Esta funcion se genera con el primer renderizado y despues se actualiza con los nuevos renderizados 
+        solo si han cambiado las dependencias.
+    
+        useCallback(function, [dependencies])
+
+
+// USESTATE
+    - Se utiliza para guardar en memoria valores y poder asignarle nuevos valores a esas variables
+    
+        const [variable, setVariable] = useState(valor_inicial_variable)
+
+    - El valor seteado con SetVariable tiene efecto para el proximo renderizado, no toma el valor inmediatamente.
+
+    - La funcion setVariable retorna en una funcion de su interior el valor de variable y luego lo actualiza, con lo que 
+        si llamamos a una funcion internamente y tomamos ese valor de retorno se puede utilizar el valor actualizado de la variable 
+            
+            EJ - setVariable(valorActual => valorActual + 1)
+                - En este caso se utiliza el valor actual dentro del setVariable y se cambia por valorActual + 1 (nuevo valor).
+                        valorActual es lo que retorna el llamado de setVariable y se utiliza para calcular su nuevo valor.
+                    
+            EJ - setNumber(number + 5); - Comenzando con number=0, React anade "reemplazar" number=5 a la cola.
+                    setNumber(n => n + 1);  - Anade la funcion a la cola, despues del anterior, toma el valor actual de number(5) y suma 1.
+                        Al final el valor es de number=6, despues de ejecutar la cola de actualizaciones antes de renderizar
+                        y este valor es el que devuelve useState a la variable, es por eso que es necesario colocarlo en la parte superior.
+
+            -  - https://es.react.dev/learn/queueing-a-series-of-state-updates
+
+    - Te habrás dado cuenta de que setState(x) en realidad funciona como setState(n => x), ¡pero n no se utiliza!
+
+
+// USEREDUCER
+    - Se utiliza para manejar los estados de manera mas organizada.
+        EJ -const [valor, funcionDispatch] = useReducer(funcionReducer, valorInicial, fnCalculaValorInicial)
+            - fnCalculaValorInicial se pasa como referencia, sin el parentesis para no llamarlo cada vez que se renderiza el componente.
+
+    - En caso de especificar todos los valores, el valor inicial se calcula fnCalculaValorInicial(valorInicial).
+
+    - En caso de no especificar fnCalculaValorInicial, entonces se asigna valorInicial a la variable valor.
+
+    - funcionDispatch(ObjetoConType/Action)
+            EJ - funcionDispatch({type:"incremented_age"})
+
+    - funcionReducer(valorActual, argFuncionDispatch)
+        
+
+    EJEMPLO
+        // DEFINICION
+            const [state, dispatch] = useReducer(funcionReducer, { name: "Carlos", age: 42 }); - Sin funcion definida para inicializar
+        
+        // LLAMADO A ACTUALIZAR
+            funcionDispatch({ type: 'incremented_age'})
+        
+        // DEFINICION DE FUNCION REDUCER
+            funcionReducer(state, action){
+                switch (action.type) {
+                    case 'incremented_age': {
+                    return {
+                        name: state.name,
+                        age: state.age + 1
+                    };
+                    }
+                    case 'changed_name': {
+                    return {
+                        name: action.nextName,
+                        age: state.age
+                    };
+                }
+    
+    - Es comveniente devolver siempre un objeto completo y no solo actualizar un valir del objeto. 
+        -https://es.react.dev/learn/updating-objects-in-state
+
+        EJ -    MAL - function reducer(state, action) {
+                        switch (action.type) {
+                            case 'incremented_age': {
+                            // 🚩 Don't mutate an object in state like this:
+                            state.age = state.age + 1;
+                            return state;
+                            }
+        
+        
+                BIEN - function reducer(state, action) {
+                        switch (action.type) {
+                            case 'incremented_age': {
+                            // ✅ Instead, return a new object
+                            return {
+                                ...state, -> Recoge el valor anterior del objeto y lo destructura (crea una copia).
+                                age: state.age + 1  -> Sobreescribe el valor especifico del objeto antes de devolver el objeto completo.
+                            };
+                            }
+        
+// USEIMMER
+    - Es una libreria que te evita el tener que destructurar el objeto para sustituir bien los estados.
+
+    - Para probar Immer:
+        Ejecuta npm install use-immer para añadir Immer como dependencia
+        Luego sustituye import { useState } de 'react' por import { useImmer } de 'use-immer'
+    
+    
+    EJ
+        import { useImmer } from 'use-immer';
+
+        export default function Form() {
+        const [person, updatePerson] = useImmer({
+            name: 'Niki de Saint Phalle',
+            artwork: {
+            title: 'Blue Nana',
+            city: 'Hamburg',
+            image: 'https://i.imgur.com/Sd1AgUOm.jpg',
+            }
+        });
+
+        function handleNameChange(e) {
+            updatePerson(draft => {
+            draft.name = e.target.value;
+            });
+        }
+
+        function handleTitleChange(e) {
+            updatePerson(draft => {
+            draft.artwork.title = e.target.value;
+            });
+        }
+
+        function handleCityChange(e) {
+            updatePerson(draft => {
+            draft.artwork.city = e.target.value;
+            });
+        }
+
+        function handleImageChange(e) {
+            updatePerson(draft => {
+            draft.artwork.image = e.target.value;
+            });
+        }
+
+// USEEFECT
+    - Se utiliza para ejecutar codigo cuando se necesita conectar con otros sistemas (Bdd, webs, tec) (REVISAR)
+
+    - useEffect(fnConfiguracion, dependencias)
+        - fnConfiguracion 
+            - Es una funcion que se ejecuta cuando se crea el componente
+
+            - Esta funcion puede devolver (return) una funcion de limpieza.
+            
+            - La limpieza se ejecuta (con los valores antiguos) cuando cambia una dependencia 
+                y despues ejecuta el resto de la funcion de configuracion, tambien se ejecuta despues de ser eliminado el componente del DOM.
