@@ -248,4 +248,5 @@ FOREACH
             - Esta funcion puede devolver (return) una funcion de limpieza.
             
             - La limpieza se ejecuta (con los valores antiguos) cuando cambia una dependencia 
-                y despues ejecuta el resto de la funcion de configuracion, tambien se ejecuta despues de ser eliminado el componente del DOM.
+                y despues ejecuta el resto de la funcion de configuracion, 
+                tambien se ejecuta despues de ser eliminado el componente del DOM.
