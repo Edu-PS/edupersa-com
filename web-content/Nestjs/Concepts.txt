@@ -9,4 +9,109 @@
     - nest -v
 
 // INSTALAR
+
+
+
+
+
+// @Module
+    - Es una configuracion, conjunto de funciones (servicios) y controladores que manejan una parte del sistema
+        y permite mantener segmentado el codigo o funcionalidad de la aplicacion.
+
+
+// @Controller
+    - Se encarga de gestionar (por parte del servidor) las peticiones de los clientes.
+        @Controller('controller_path') - 'path' indica cual es el subdominio del cual atendera las solicitudes de los clientes. 
+
+    - Se encarga de preparar los datos a devolver (DTO - Data Transfer Object) a los clienes.
+
+
+// @Provider
+    - Es una parte de codigo que realizar una funcion especifica (puede ser microservicio) y que es inyectable.
+
+    - Se utilizan en otra parte del sistema por inyeccion (con la funcion constructor())
+
+    - Las funciones que se necesitan hacer por el controlador se delegan a los providers.
+
+
+// @Sevice
+    - Son micro funciones que vienen delegadas o son necesitadas por el controlador.
+
+    - Es un tipo de provider, ya que presta una funcion especifica al sistema.
+
+
+// @Inyectable
+    - Indica que ese codigo se puede utilizar en otro lugar (ej. un controller)
+        utilizando la funcion contructor() mediante la inyeccion de dependencias
+
+
+// @Get
+    - gestiona las peticiones GET de las webs
+        @Get('sub_path') - Gestiona con la direccion 'controller_path/sub_path'.
+
+    - Get(':id') - Indica que en este endpoint vamos a recibir un parametro llamado 'id'
+        EJ - @Controller('products') -> @Get(':id') -> /products/18 - El valor de id es 18.
+
+
+// @Param
+    - Nos permite recoger los parametros que se pasan en una solicitud al servidor dentro de un GET, PUT, etc.
+        EJ - Obtener todos en un objeto.
+        @Get(':id/:size')
+            findWithSize( @Param() params) {
+                return `En esta ruta obtenemos el producto ${params.id}, pero en su tamaño ${params.size}`;
+            }
+        
+        RUTAS: http://localhost:3000/products/11/small o http://localhost:3000/products/27/big
+
+        EJ - Obtener parametros destructurados @Param('nombre_get') nuevo_nombre: type
+        @Get(':id')
+        find(@Param('id') id: number) {
+            return `Página del producto ${id}`;
+        }
+
+        @Get(':param1'/:param2)
+        nombre_funcion(@Param('param1') nombre_nuevo: type, @Param('param2') nuevo_nombre2: type){ 
+            Codigo de funcion, llamado al parametro con ${param1} y ${param2}
+        }
+
+    - Este considera todo el texto enviado en la solicitud del cliente.
+
+
+// @Query
+    - Permite recoger parametros de la solicitud del cliente pero utilizando el '?' como indicador de comienzo de parametros 
     
+    - EJ - /prueba?id:24
+            @Get('prueba?')
+            async getHello(@Query('id') id: number): Promise<string> {
+                return this.appService.getHello(id.toString());
+            }
+
+
+    - Recibe el dato y lo verifica.
+        @Get('cars')
+        carsQuery(@Query('count', ParseIntPipe) carCount: number) {
+            return carCount;
+        }
+
+
+// @Post
+    - Sirve para gestionar solicitudes POST de un cliente.
+
+
+// @Body
+    - Sirve para recibir datos del cuerpo (BODY) de la solicitud enviada al servidor por parte del cliente.
+
+    EJ - Recibiendo todos los datos en una sola variable.
+    
+        @Post()
+        createProduct(@Body() body) {
+            return `Creo un producto ${body.name} con descripción ${body.description}`;
+        }
+
+
+    EJ - Recibiendo dato por dato
+
+        @Post()
+        createProduct(@Body('name') name: string, @Body('description') description: string) {
+            return `Creo el producto ${name} con descripción ${description}.`;
+        }

@@ -14,16 +14,15 @@ NODEJS
 
 
 
-COMO SABER LA VERSION 
+// COMO SABER LA VERSION 
     Ejecutando el "node -v" comando en el cmd de windows. Con esto te dira la version que tienes actualmente instalado en el sistema.
 
-COMO ENTRAR AL EDITOR DE NODEJS
+// COMO ENTRAR AL EDITOR DE NODEJS
     Ejecutando el comando "node" en el cmd de windows.
 
-COMO SALIR DEL EDITOR NODE
+// COMO SALIR DEL EDITOR NODE
     Presionando las teclas "Ctrl + C" dos veces, "Ctrl + D" o escribiendo ".exit".
 
-COMO EJECUTAR UN ARCHIVO
+// COMO EJECUTAR UN ARCHIVO
     Se debe ir a la direccion donde se encuentra el archivo y ejecutar el comando "node nombre_archivo.js" y presionar ENTER.
-
 

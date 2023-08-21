@@ -6,3 +6,23 @@ ERROR ReferenceError: requiere is not defined
 
     Cambiar el nombre del archivo por .mjs para ejecutar por ECMAScript module o .cjs para ejecutar con Commonjs
 
+// --no-spec
+    - Genera cualquier comando CLI sin el archivo de pruebas unitarias.
+        EJ - nest generate controller nombre_controller --no-spec
+
+
+// --dry-run
+    - Permite visualizar que acciones va a realizar el CLI sin que se ejecute y genere archivos.
+        EJ - nest generate controller nombre_controller --dry-run
+
+
+// npm run start
+    - Aunque veamos que "npm run start" llama por debajo "nest start", es importante que se arranque el 
+    servidor mediante npm (y en general se invoquen los scripts de npm siempre), para asegurarte que te toma la versión del 
+    CLI de Nest que tienes instalada en local en este proyecto, en lugar de la versión global instalada en Node
+
+
+// npm run start:dev (equivalente a nest start --watch, aplica lo mismo de lanzar npm para manejar la version local)
+    - Permite arrancar el servidor y se actualice de manera automatica sin tener que detener y arracar el servidor con cada cambio.
+
+
