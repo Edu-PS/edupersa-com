@@ -15,3 +15,8 @@ Recursion
 Iteracion
     Es la repeticion de un conjunto de codigo hasta que se cumpla o deje de cumplirse una condicion que detiene la ejecucion.
 
+
+Interfaces
+    Son definiciones que se utilizan para dar estandarizado a la forma de programar.
+    
+    Se definen clases con sus propiedades y metodos necesarios y que son obligatorios o necesarios al utilizar esa clase.
