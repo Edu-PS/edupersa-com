@@ -26,3 +26,29 @@ HEAP
 // LOGICO AND (&&)
     - Como condicionante se utiliza para devolver el valor de la derecha si la variable es true.
         boolean && returnThisIfIsTrue;
+
+
+// JSON
+    - Siempre se deben colocar los valores clave entre comillas dobles.
+
+    - [] - Representa un array
+
+    - {} - Representa un objeto
+
+    - JSON.stringify(objeto_javascript)
+        - Convierte el objeto de javascript en formato JSON.
+    
+    - JSON.parse(json)
+        - Convierte un texto JSON en un objeto de javascript.
+    
+    - response.json()
+        - Convierte una respuesta JSON en el objeto javascript
+
+        - Devuelve una promesa, por eso se utiliza cuando se realiza un fetch
+            EJ - fetch('https://url/del/servicio/web') -> Aqui la web devuelve el resultado en JSON.
+                .then(response => response.json())  -> Convierte en objeto la respuesta JSON.
+                .then(json => {
+                // aquí tenemos el parámetro json que contien el dato que nos ha devuelto el servicio web.
+                // podemos hacer cualquier cosa con él...
+                console.log(json)
+                });
