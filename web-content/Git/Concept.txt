@@ -1,17 +1,73 @@
+//////////////////////
+///// COMANDOS ///////
+//////////////////////
 
-// COMANDOS
-
-    - git pull
-        Sirve para igualar el repositorio local con el contenido del repositorio en remoto.
 
 // ADD ORIGIN
     - git remote add origin url_repository
 
+
 // SET NEW ORIGIN
     - git remote set-url origin url_repository
+
 
 // REMOVER REPOSITORIO REMOTO
     - git remote rm nombre_repositorio
 
+
 // DEVOLVER CAMBIO DEL STAGE
     - git restore nombre_archivo
+
+
+// TRAER EL REMOTO AL LOCAL
+    - git pull
+        Sirve para igualar el repositorio local con el contenido del repositorio en remoto.
+
+
+// TRAER EL REMOTO AL WORKING
+    - git fetch
+
+
+// ENVIAR CAMBIOS AL REMOTO
+    - git push origin <your_branch>
+
+// ELIMINAR BRANCH REMOTO
+    - git push origin -d <your_branch>
+    - git push origin --delete <your_branch>
+
+
+// ELIMINAR BRANCH LOCAL
+    - git branch -d <branch_name>
+
+
+// MOSTRAR TODOS LOS BRANCH
+    - git branch -a
+
+
+// CAMBIAR DE RAMA
+    - git checkout nombre_rama
+
+
+// CREAR RAMA LOCAL
+    - git branch nombre_rama
+
+// CREAR RAMA Y CAMBIAR A ELLA
+    - git checkout -b nombre_rama
+
+
+// RENOMBRAR UNA RAMA
+    - git branch -m VIEJO-NOMBRE-RAMA NUEVO-NOMBRE-RAMA
+
+    # Alternativa
+    - git branch --move VIEJO-NOMBRE-RAMA NUEVO-NOMBRE-RAMA
+
+
+// COMPARAR RAMAS
+    - git diff PRIMERA-RAMA..SEGUNDA-RAMA
+
+
+// VER LAS RAMAS COMBINADAS
+    - git branch --merged
+
+
+// 
