@@ -115,3 +115,61 @@
         createProduct(@Body('name') name: string, @Body('description') description: string) {
             return `Creo el producto ${name} con descripción ${description}.`;
         }
+
+
+// @Column
+    @Column('tipo_dato', { length: xx})
+        EJ  -   @Column('varchar', { length: 50 })
+                name: string;
+
+
+// Insertar Entidades en otros modulos
+    TypeOrmModule.forFeature([Nombre_Entidad])
+
+
+// @Entity
+    -   @Entity("Nombre_Tabla)
+        export class "Nombre_Clase" { Definicion de tabla }
+
+
+    - Entity({
+        name: "users",
+        engine: "MyISAM",
+        database: "example_dev",
+        schema: "schema_with_best_tables",
+        synchronize: false,
+        orderBy: {
+            name: "ASC",
+            id: "DESC",
+        },
+    })
+    export class User {}
+
+
+
+// Pasos para trabajar con bases de datos.
+
+    - Instalar TypeOrm y mysql2 -> npm i @nestjs/typeorm mysql2 typeorm
+
+    - Configurar la conexion de la base de datos en un modulo a parte.
+        - Importar TypeOrmModule.forRoot() en el modulo y configurarlo.
+
+    - Crear la entidad de la estructura de la base de datos 
+        -> nombre_entidad.entity.ts
+
+    - Crear el controlador, servicio y modulo de la web que va a comunicar con la base de datos.
+
+        - Servicio -> 
+            Inyectar el repositorio (Que da acceso a funciones de bases de datos) haciendo referencia a la entidad que se va a utilizar.
+            Crear las funciones que se vayan a utilizar en el controlador -> constructor(@InjectRepository(Entity) private readonly nombreLocalRepositorio: Repository<Entity>,) {}
+        
+        - Controlador -> 
+            Inyectar el servicio para llamar a las funciones
+            Crear las diferentes rutas que se necesiten manejar constructor(private readonly nombreLocalServicio: ServicioAUtilizar)
+
+        - Modulo -> 
+            Importar el modulo de conexion de la base de datos. 
+            Importar (imports) las entidades que se vayan a manejar (TypeOrmModule.forFeature([Entity]))
+            Para usar esa entidad en otros modulos se tiene que exportar(exports) TypeOrmModule.
+
+    - Importar el modulo que se quiere ejecutar en el modulo principal de la aplicacion.
