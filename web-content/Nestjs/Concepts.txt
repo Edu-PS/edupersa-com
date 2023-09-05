@@ -69,7 +69,7 @@
             return `Página del producto ${id}`;
         }
 
-        @Get(':param1'/:param2)
+        @Get(':param1/:param2')
         nombre_funcion(@Param('param1') nombre_nuevo: type, @Param('param2') nuevo_nombre2: type){ 
             Codigo de funcion, llamado al parametro con ${param1} y ${param2}
         }
@@ -149,7 +149,8 @@
 
 // Pasos para trabajar con bases de datos.
 
-    - Instalar TypeOrm y mysql2 -> npm i @nestjs/typeorm mysql2 typeorm
+    - Instalar TypeOrm y mysql2 
+        -> npm i @nestjs/typeorm mysql2 typeorm
 
     - Configurar la conexion de la base de datos en un modulo a parte.
         - Importar TypeOrmModule.forRoot() en el modulo y configurarlo.
@@ -159,15 +160,18 @@
 
     - Crear el controlador, servicio y modulo de la web que va a comunicar con la base de datos.
 
-        - Servicio -> 
-            Inyectar el repositorio (Que da acceso a funciones de bases de datos) haciendo referencia a la entidad que se va a utilizar.
-            Crear las funciones que se vayan a utilizar en el controlador -> constructor(@InjectRepository(Entity) private readonly nombreLocalRepositorio: Repository<Entity>,) {}
-        
-        - Controlador -> 
+        - Controlador -> nest g co typeorm/products --no-spec
             Inyectar el servicio para llamar a las funciones
             Crear las diferentes rutas que se necesiten manejar constructor(private readonly nombreLocalServicio: ServicioAUtilizar)
 
-        - Modulo -> 
+        - Servicio -> nest g s typeorm/products --no-spec
+            Inyectar el repositorio (Que da acceso a funciones de bases de datos) haciendo referencia a la entidad que se va a utilizar.
+                -> constructor(@InjectRepository(Entity) private readonly nombreLocalRepositorio: Repository<Entity>,) {}
+            
+            Crear las funciones que se vayan a utilizar en el controlador -> 
+                
+        
+        - Modulo -> nest g mo typeorm/products --no-spec
             Importar el modulo de conexion de la base de datos. 
             Importar (imports) las entidades que se vayan a manejar (TypeOrmModule.forFeature([Entity]))
             Para usar esa entidad en otros modulos se tiene que exportar(exports) TypeOrmModule.
