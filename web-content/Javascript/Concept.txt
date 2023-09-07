@@ -38,8 +38,8 @@ HEAP
     - JSON.stringify(objeto_javascript)
         - Convierte el objeto de javascript en formato JSON.
     
-    - JSON.parse(json)
-        - Convierte un texto JSON en un objeto de javascript.
+    - JSON.parse(<texto>)
+        - Convierte un texto(en formato JSON) JSON en un objeto de javascript.
     
     - response.json()
         - Convierte una respuesta JSON en el objeto javascript
@@ -52,3 +52,36 @@ HEAP
                 // podemos hacer cualquier cosa con él...
                 console.log(json)
                 });
+
+
+// FOR
+    - for (let i = 0; i <= arrayBancos.length - 1; i++) {Sentencias}
+
+
+// FOR ARRAY
+    - for (elemento of array) {sentencias}
+
+
+// FOR OBJETOS
+    - for (elemento in objeto) {sentencia}
+
+
+// ACEDER ARRAY
+    - array[indice]
+
+// ACCEDER OBJETO
+    - objeto.nombrePropiedad
+
+    - objeto["nombrePropiedad"] -> devuelve el valor. 
+        (Este se usa cuando el nombrePropiedad es raro, como "nombre-asi" que no se deberia usar ese nombre en la propiedad)
+
+// DIFERENCIA ENTRE OBJETO Y JSON
+    - JSON -> Tiene comillas en los nombres de las propiedades.
+        [{"id": "1", "name": "nombre_1"}, {"id": "2", "name": "nombre_2"},{"id": "3", "name": "nombre_3"}]
+    
+    - OBJETO JAVASCRIPT -> Sus nombres de las propiedades no tienen comillas.
+        [{id: "1", name: "nombre_1"}, {id: "2", name: "nombre_2"},{id: "3", name: "nombre_3"}]
+    
+
+// TERNARIO (?)
+    condicion_evaluar ? si_es_true : si_es_false;

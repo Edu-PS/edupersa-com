@@ -26,7 +26,11 @@ INSTALACION
 
 
 CREAR PROYECTO
-    - 
+    - npx create-react-app nombre_applicacion
+
+
+// EJECUTAR EL PROYECYO
+    - npm start
 
 
 NOMENCLATURAS
@@ -72,7 +76,7 @@ EXPORTANDO
         }
 
 
-IMPORT
+// IMPORT
     - Se puede importar todos los export con una sola expresion.
         import * as say from './say.js'; 
 
@@ -81,18 +85,18 @@ IMPORT
     
 
 
-USEMEMO
+// USEMEMO
     - Se utiliza para almacenar un resultado de un renderizado anterior y 
         comparar las dependencias de las que se debe comparar parar actualizar el componente y no realizarlo si no es necesario.
 
 
-MAP
+// MAP
     - https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Array/map
     - Se utiliza para ejecutar sobre cada elemento de un objeto iterable una funcion especifica.
     - Retorna la funcion por cada elemento, creando un nuevo array.
         EJ - array.map((elemento) => {Codigo a ejecutar})
 
-FOREACH
+// FOREACH
     - https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach
     - Ejecuta la funcion por cada elemento del array.
     - No retorna ningun valor, solo recorre el array y ejecuta la funcion.

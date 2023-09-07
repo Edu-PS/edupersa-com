@@ -70,4 +70,10 @@
     - git branch --merged
 
 
-// 
+// COMBINAR RAMAS
+    - Moverte a la rama de la cual quieras traerte los cambios con git checkout rama_sin_cambios (asi queda esta como rama activa)
+        y luego
+        - git merge rama_con_cambios
+
+
+//
