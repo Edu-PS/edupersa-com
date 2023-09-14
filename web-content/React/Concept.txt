@@ -245,7 +245,7 @@ EXPORTANDO
 // USEEFECT
     - Se utiliza para ejecutar codigo cuando se necesita conectar con otros sistemas (Bdd, webs, tec) (REVISAR)
 
-    - useEffect(fnConfiguracion, dependencias)
+    - useEffect(fnConfiguracion, arrayDependencias)
         - fnConfiguracion 
             - Es una funcion que se ejecuta cuando se crea el componente
 

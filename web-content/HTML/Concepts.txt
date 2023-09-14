@@ -1,0 +1,46 @@
+// DEFINICION
+    - Es un lenguaje de marcado que define la estructura de una web.
+
+    - Define los nombres de cada elemento y por el nombre el navegador 
+        sabe como se debe comportar o le da ciertos atributos o funciones.
+
+// ELEMENTO
+    - Son piezas definidos que tienen funciones especificas dentro de la web.
+
+    - Estan formados por: 
+        -> Tag de apertura 
+        -> Atributos - Son propiedades del elemento
+        -> Contenido - Es lo que va a fectar el elemento en su comportamiento
+        -> Tag de cierre
+            EJ - Parrafo - <p class="parrafo-principal"> Contenido del parrafo </p>
+
+// ANIDAMIENTO
+    - Es introducir un elemento dentro de otro. Aqui si deja en negrita la palabra ELEMENTO.
+        EJ - <p> Contenido del <strong> ELEMENTO </strong> en negrita </p>
+
+    - Siempre se debe tener una apertura y cierre de un elemento (cuando lo necesite, existen ecepciones <img /> por ejemplo)
+
+    - De no cerrar correctamente cada elemento, el navegador hara su mejor esfuerzo por interpretar lo que quisiste hacer.
+
+// ELEMENTO VACIO  
+    - Son elementos que no necesitan tag de cierre.
+        EJ - <img src="images/firefox-icon.png" alt="Mi imagen de prueba" />
+
+// <html></html> - Encierra todo el contenido de una web.
+
+// <head></head> - Define propiedades de la pagina web pero que no se quieren mostrar al cliente.
+
+// <title></title> - Define el titulo que aparece en la pestana del navegador.
+
+// <body></body> - Encierra todo el contenido que se quiere mostrar al cliente.
+
+// <p></p> - Parrafos
+
+// <a></a> (anchor - ancla) - Enlaces
+
+// <ul></ul> (unordered list) - Listas desordenadas
+
+// <ol></ol> (ordered list) - Listas ordenadas
+
+// <li></li> (list Item) - Elemento de una lista
+

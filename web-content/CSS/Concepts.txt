@@ -1,0 +1,67 @@
+// DEFINICION (Cascading Styles Sheets)
+    - Es un codigo que se utiliza para dar estilos a la web.
+
+    - Permite aplicar estilos de forma selectiva a elementos en concretos del codigo HTML.
+
+    - Cada segmento de codigo es llamado REGLA y esta compuesto por:
+        -> Selector - Indica a que elementos se aplica la regla. Varios elementos se separan por coma (p, a, li, etc)
+        -> Propiedad:Valor; - Indica lo que se le debe aplicar al elemento.
+
+
+// TIPOS DE SELECTORES
+    - TIPO -> Selecciona todos los elementos del mismo tipo dentro de la web.
+        EJ - p, li {color:red;}
+
+
+    - ID (#my-id) -> Selecciona el elemento de la web que tiene el ID escrito despues del #.
+
+
+    - CLASE (.my-clase) -> Selecciona todos los elementos a los cuales se les haya asignado esa clase.
+
+
+    - ATRIBUTO (img[src]) -> Selecciona los elementos que tengan ese atributo definido dentro de el.
+        EJ - Selecciona (<img src="algo"/> pero no el elemento <img/>) 
+
+
+    - PSEUDOCLASE (a:hover) -> Selecciona los elementos cuando tienen un estado especifico.
+        EJ - Selecciona y aplica al anchor que tiene el raton (puntero) sobre el.
+
+
+    - DESCENDIENTES (espacio) 
+        -> Selecciona todos los elementos que estan dentro de la secuencia de descencencia. Elementos dentro de otros.
+
+            EJ - .box ul li - Selecciona todos los elementos li dentro de los que tienen la clase box y que esten dentro de un ul.
+                            - Va a buscar la clase box y selecciona los ul dentro de box y luego los li dentro de esos ul
+                                asi que afecta a los ultimos de la descendencia (los li).
+
+        - Se pueden realizar combinaciones de varios selectores.
+
+
+    - HIJOS DIRECTOS  (>) -> Selecciona los elementos que sean hijos directos (Que justamente esten debajo del elemento padre sin otro nivel)
+        - EJ ul > li -> Selecciona <li"uno"> y <li"tres"> ya que son hijos directos. <li"dos"> es hijo directo de <ol>.
+            <ul>
+                <li"uno"></li"uno>
+                    <ol>
+                        <li"dos"></li"dos">
+                    </ol>
+                <li"tres"></li"tres">
+            </ul>
+
+
+    - ADYACENTE (+) -> Selecciona un elemento que esta justo al lado del otro en el mismo nivel de jerarquia.
+        - EJ - h1 + p -> Selecciona todos los p que esten despues de un h1. En este caso solo selecciona <p"uno"> 
+            ya que <h2> es el adyacente a <h1"dos">
+                <h1"uno"></h1"uno">
+                <p"uno"></p"uno">
+                <h1"dos"></h1"dos">
+                <h2></h2>
+                <p"dos"></p"dos>
+    
+
+    - ADYACENTE GENERAL (~) -> Selecciona todos los elementos al mismo nivel dentro de la combinacion.
+        EJ - h2 ~ p -> selecciona todos los p al mismo nivel (adyacentes) a h2.
+
+    
+
+
+
