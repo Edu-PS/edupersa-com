@@ -85,3 +85,9 @@ HEAP
 
 // TERNARIO (?)
     condicion_evaluar ? si_es_true : si_es_false;
+
+// localStorage.setItem("clave", valor) -API de almacenamiento web
+    - Permite almacenar valores en el navegador en formato "clave-valor" y despues recuperarlos por la clave.
+
+// sessionStorage ( Window.sessionStorage )
+    - Permite almacenar valores en el navegador que se mantiene mientras el navegador este abierto (sesion)

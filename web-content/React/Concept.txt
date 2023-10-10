@@ -254,3 +254,14 @@ EXPORTANDO
             - La limpieza se ejecuta (con los valores antiguos) cuando cambia una dependencia 
                 y despues ejecuta el resto de la funcion de configuracion, 
                 tambien se ejecuta despues de ser eliminado el componente del DOM.
+
+
+// UseContext
+        - Se utiliza para intercambiar valores de variables entre componentes sin necesidad de usar props.
+
+        - Se tiene que definir un provider y llamar a las variables con consumer.
+
+        - Se utiliza el useMemo para no crear una variable diferente cada vez que se renderiza.
+
+        - Se utiliza junto con useReducer o useState para poder almacenar los valores de los estados y disparar los renderizados.
+

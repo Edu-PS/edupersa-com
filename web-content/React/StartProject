@@ -1,0 +1,40 @@
+********** COMENZAR EL PROYECTO **********
+// CREAR PROYECTO
+    - npx create-react-app nombre_applicacion
+
+// PROBAR QUE SE CREO BIEN
+    - npm start
+
+// CREAR ESTRUCTURA DE CARPETAS
+    - asset
+    - page
+    - componet
+
+// CREAR EL PRIMER COMPONENTE
+    - 
+
+// LLAMAR AL COMPONENTE
+    - Ir al Index.js y comentar el componente App, llamar al nuevo componente creado y verificar que se visualiza en el servidor de la aplicacion
+
+// ELIMINAR ARCHIVOS INNESESARIOS
+    - Totalmente opcional, los puedes dejar como referencia de como utilizan los comandos.
+
+// DETENER EL SERVIDOR
+    - Ctrl + C -> S
+
+// REALIZAR EL PRIMER COMMIT
+    - git add .
+    - git commit -m 'Commit Inicial'
+
+
+********** SINCRONIZAR CON EL REMOTO **********
+
+
+// ADD ORIGIN
+    - git remote add origin url_repository
+
+// PULL ORIGIN TO LOCAL
+    - git pull origin master --allow-unrelated-histories
+
+// PUSH LOCAL TO REMOTE
+    - git push origin master

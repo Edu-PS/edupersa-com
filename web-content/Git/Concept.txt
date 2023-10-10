@@ -23,6 +23,9 @@
     - git pull
         Sirve para igualar el repositorio local con el contenido del repositorio en remoto.
 
+// TRAER CAMBIOS AL REMOTO (cuando no se comparte o tienen relacion entre ellos, tambien aplica a merge)
+    - git pull origin master --allow-unrelated-histories
+
 
 // TRAER EL REMOTO AL WORKING
     - git fetch
