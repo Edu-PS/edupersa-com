@@ -1,0 +1,34 @@
+////// CONTENERDOR ////// -> Convierte el contenedor en flex.
+    display: flex;
+    flex-direction: row || column || row-reverse || column-reverse ;
+    flex-wrap: wrap || nowrap;
+    flex-flow: column wrap; <flex-direction> <flex-wrap>
+
+////// ALINEAR ////// -> Como se alinean los items dentro del contenedor.
+
+    /* MAIN AXIS ALING*/
+        justify-content: stretch;
+    
+    
+    /* CROOS AXIS ALING*/
+    
+        /* Una linea */
+            align-items: stretch;
+            align-self: auto; /* Se aplica a elementos especificos*/
+        /* Multilineas*/
+           align-content:center;
+
+
+////// TAMAÑO ////// -> Como se distribuyen los espacios disponibles entre los items del eje principal.
+                        Se reparte despues de dar dimenciones a todos los elementos de la web.
+                        Se aplica a cada item o en general si se define en el contenedor.
+    
+    flex-grow: 0;       // (0) No se reparte el espacio disponible.
+                        Determina que proporcion de espacio toma ese item en particular.
+    flex-shrink: 1;     // (1) Se reducen los items par ajustarse al contenerdor. (0) No se comprimen.
+                        Como se reducen los elementos con respecto a otros debido a que no sobra espacio. 
+    flex-basis: auto    // (auto) El tamaño inicial es del contenedor en el oje principal.
+
+    flex: 0 1 auto;     // <flex-grow> <flex-shrink> <flex-basis>
+
+

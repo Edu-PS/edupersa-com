@@ -21,32 +21,65 @@
         -> npm i @nestjs/typeorm mysql2 typeorm
 
     - Configurar la conexion de la base de datos en un modulo a parte.
-        - Importar TypeOrmModule.forRoot() en el modulo y configurarlo.
 
-    - Crear la entidad de la estructura de la base de datos 
-        -> nombre_entidad.entity.ts
+        - Crear el modulo de la base de datos
+            - g mo database --no-spec
+        - Importar TypeOrmModule.
+            - import { TypeOrmModule } from '@nestjs/typeorm';
 
-    - Crear el modulo, controlador y servicio de la web que va a comunicar con la base de datos.
+        - Configurar la conexion en imports: [].
+            TypeOrmModule.forRoot({
+                type: 'mysql',
+                host: 'LEN-PERAZA', // Cambia esto al host de tu base de datos MySQL
+                port: 3306, // Cambia esto al puerto de tu base de datos MySQL
+                username: 'root', // Cambia esto al nombre de usuario de tu base de datos MySQL
+                password: '4619.Leps', // Cambia esto a la contraseña de tu base de datos MySQL
+                database: 'admin_web', // Cambia esto al nombre de la base de datos que deseas utilizar
+                entities: [], // Coloca aquí las entidades de TypeORM si las tienes
+                synchronize: false, // Esto sincronizará las entidades con la base de datos (¡cuidado en producción!)
+                autoLoadEntities: true, // Esto permite que las entidades se carguen automaticamente sin necesidad de incluirlas en el array entities
+                // Ya que son importadas cada una de las entidades cuando se van a utilizar en los modulos correspondientes.
+                }),
+
+    - ENTITY 
+        - Crear un archivo con la entidad de la estructura de la base de datos 
+            -> nombre_entidad.entity.ts
+
+    - CREAR el modulo, controlador y servicio de la web que va a comunicar con la base de datos.
     
-        - Modulo -> nest g mo typeorm/products --no-spec
-            Importar el modulo de conexion de la base de datos. 
-            Importar (imports) las entidades que se vayan a manejar (TypeOrmModule.forFeature([Entity]))
-            Para usar esa entidad en otros modulos se tiene que exportar(exports) TypeOrmModule.
+        - MODULO -> nest g mo direccion/nombreArchivo --no-spec
+            - Importar el modulo de conexion de la base de datos.
+                - 
+            
+            - Importar (imports) las entidades que se vayan a manejar (TypeOrmModule.forFeature([Entity]))
+            
+            - Para usar esa entidad en otros modulos se tiene que exportar(exports) TypeOrmModule.
 
-        - Controlador -> nest g co typeorm/products --no-spec
-            Inyectar el servicio para llamar a las funciones
-            Crear las diferentes rutas que se necesiten manejar constructor(private readonly nombreLocalServicio: ServicioAUtilizar)
+        - CONTROLADOR -> nest g co direccion/nombreArchivo --no-spec
+            - Inyectar el servicio para llamar a las funciones
+                - constructor(private readonly nombreLocalServicio: NombreDelServicioExportado) {}
 
-        - Servicio -> nest g s typeorm/products --no-spec
+            - Crear las diferentes rutas que se necesiten manejar
+
+        - SERVICIO -> nest g s direccion/nombreArchivo --no-spec
             Inyectar el repositorio (Que da acceso a funciones de bases de datos) haciendo referencia a la entidad que se va a utilizar.
                 -> constructor(@InjectRepository(Entity) private readonly nombreLocalRepositorio: Repository<Entity>,) {}
             
-            Crear las funciones que se vayan a utilizar en el controlador -> 
+    - Crear las funciones que se vayan a utilizar en el controlador ->
+
+    - 
 
     - Importar el modulo que se quiere ejecutar en el modulo principal de la aplicacion.
 
     - Implementar el servidor
         - npm run start:dev
+
+    - Si todo va bien, deberia conectarse con la base de datos, en caso contrario sale un mensaje 
+        ERROR [TypeOrmModule] Unable to connect to the database. ETIMEDOUT
+    
+    - Probar el servidor
+        - Depende la configuracion del puerto del servidor en main.ts entonce realizar el llamado a ese controlador con
+
 
 
 
