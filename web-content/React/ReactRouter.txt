@@ -1,0 +1,31 @@
+// INSTALLAR
+    - npm install react-router-dom
+
+// UTILIZAR BROWSER ROUTER
+    - IMPORTAR
+        - Permite que se utilice los routes en la web y poder declarar individualmente.
+            - import { BrowserRouter as Router } from 'react-router-dom';
+            
+    
+    // ENVOLVER LA APP
+        - Con el componente <Router> (porque asi se renombro al momento de importar) envolver la aplicacion.
+        - Ir lo mas arriba de la app posible para que puedas utilizar router.
+
+
+// UTILIZAR ROUTE
+    - IMPORTAR
+        - import { Route, Routes } from "react-router-dom";
+
+            - <Routes> -> Para envolver los elementos <Route>
+            - <Route> -> Indica una ruta a la que atender para mostrar un elemento o componente.
+                <Routes>
+                    <Route path="/" element={<h1> MAIN </h1>}></Route>
+                    <Route path="/login" element={<LoginPage></LoginPage>}></Route>
+                    <Route path="/main" element={<MainPage></MainPage>}></Route>
+                </Routes>
+
+
+
+// REDIRECT
+    - Se utiliza para redireccionar a otro route.
+        - import { redirect } from "react-router-dom";
