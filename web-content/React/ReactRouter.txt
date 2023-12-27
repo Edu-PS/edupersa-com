@@ -29,3 +29,45 @@
 // REDIRECT
     - Se utiliza para redireccionar a otro route.
         - import { redirect } from "react-router-dom";
+
+
+
+
+// COMO UTILIZAR (opcion 1)
+
+        <BrowserRouter>
+            <Routes>
+                <Route path="/" element={<Home/>}>
+                    <Route path="/contact" element={<Contact/>} />
+                <Route/>
+            <Routes/>
+        <BrowserRouter/>
+
+
+// COMO utilizar (opcion 2)
+        const route = createBrouserRouter([
+                {
+                path: "/",
+                element: <Root />,
+                loader: rootLoader,
+                path:
+                element:
+                action:,
+                }
+            ])
+
+        O para utilizar la nomenclatura de router anterior a 6.4.
+
+        const route = createBrowserRouter(
+        createRoutesFromElements(
+            <Route path="/" element={<Root />}>
+            <Route path="dashboard" element={<Dashboard />} />
+            {/* ... etc. */}
+            </Route>
+        )
+
+        <RouterProvider router={route}/>
+
+
+// OUTLET
+        - Es un componente que representa todos los elementos que son hijos de otro componente de un <Route>
