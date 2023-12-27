@@ -32,19 +32,8 @@
 
 
 
-
-// COMO UTILIZAR (opcion 1)
-
-        <BrowserRouter>
-            <Routes>
-                <Route path="/" element={<Home/>}>
-                    <Route path="/contact" element={<Contact/>} />
-                <Route/>
-            <Routes/>
-        <BrowserRouter/>
-
-
-// COMO utilizar (opcion 2)
+https://www.youtube.com/watch?v=U7oPfhHAzLc
+// COMO utilizar (opcion - utilizada en vresion 6.4)
         const route = createBrouserRouter([
                 {
                 path: "/",
@@ -67,6 +56,19 @@
         )
 
         <RouterProvider router={route}/>
+
+
+
+// COMO UTILIZAR (opcion menor de 6.4)
+
+        <BrowserRouter>
+            <Routes>
+                <Route path="/" element={<Home/>}>
+                    <Route path="/contact" element={<Contact/>} />
+                <Route/>
+            <Routes/>
+        <BrowserRouter/>
+
 
 
 // OUTLET
